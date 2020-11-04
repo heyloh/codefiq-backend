@@ -1,0 +1,8 @@
+{
+  "name": "codefiq-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/heyloh/codefiq-backend.git",
+  "author": "Lohana Torres <lt.leopoldo@gmail.com>",
+  "license": "MIT"
+}
