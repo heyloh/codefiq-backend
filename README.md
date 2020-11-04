@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Codefiq" title="#Codefiq" src="./assets/banner.png" />
+  <img alt="Codefiq" title="#Codefiq" src="./github-assets/banner.png" />
 </h1>
 
 <p align="center">🌐 Backend do projeto 🍃</p>
