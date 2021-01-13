@@ -1,8 +1,6 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 const express = require('express');
 const routes = require('./routes');
-
-dotenv.config();
 
 require('./database');
 
