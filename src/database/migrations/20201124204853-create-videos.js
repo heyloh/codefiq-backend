@@ -20,7 +20,7 @@ module.exports = {
         }
       },
       url: {
-        type: Sequelize.STRING(11),
+        type: Sequelize.STRING,
         unique: true,
         allowNull: false,
       },
