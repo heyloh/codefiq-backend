@@ -22,7 +22,7 @@ routes.get('/users', UserController.index);
 routes.post('/users', UserController.store);
 
 /* Route for signing in as a user */
-routes.get('/sign-in', UserController.show);
+routes.post('/sign-in', UserController.show);
 
 /* Temporary route for validate the token */
 routes.get('/test', TokenValidator, async (request, response) => {
