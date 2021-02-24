@@ -3,19 +3,24 @@ const Exercise = require('../models/Exercise');
 module.exports = {
   /* The following method is used for listing all exercises registered */
   async index(request, response) {
-    const exercises = await Exercise.findAll();
+    const { subject_id } = request.query;
+
+    let exercises;
+
+    if (subject_id) {
+      exercises = await Exercise.findAll({
+        where: {
+          subject_id,
+        },
+      });
+    } else {
+      exercises = await Exercise.findAll();
+    }
+
     return response.json(exercises);
   },
 
   async search(request, response) {
-    const { subject_id } = request.query;
-
-    const exercises = await Exercise.findAll({
-      where: {
-        subject_id,
-      },
-    });
-
     return response.json(exercises);
   },
 
