@@ -7,22 +7,33 @@ module.exports = {
     return response.json(exercises);
   },
 
+  async search(request, response) {
+    const { subject_id } = request.query;
+
+    const exercises = await Exercise.findAll({
+      where: {
+        subject_id,
+      },
+    });
+
+    return response.json(exercises);
+  },
+
   /* The following method is used for creating a new exercise */
   async store(request, response, next) {
     const { content, subject_id } = request.body;
-    
+
     /* Inserting the new exercise on the database */
     try {
       const exercise = await Exercise.create({ content, subject_id });
 
       /* Returning successfully */
       return response.status(201).json(exercise);
-
-    } catch (e){
+    } catch (e) {
       /* Testing for errors in exercise creation  */
       const err = new Error(e);
-      response.status(409).json({err});
+      response.status(409).json({ err });
       return next(err);
     }
-  }
+  },
 };
