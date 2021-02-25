@@ -14,4 +14,5 @@ module.exports = {
     underscored: true,
     underscoredAll: true,
   },
+  max: 25,
 };
