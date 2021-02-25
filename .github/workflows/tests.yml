@@ -24,7 +24,5 @@ jobs:
         run: npx sequelize db:migrate
       - name: Run tests
         run: npm test
-      - name: Run development server
-        run: npm start
         env: 
           CI: true
