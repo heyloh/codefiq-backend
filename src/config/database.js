@@ -19,4 +19,6 @@ module.exports = {
     minConnections: 0,
     maxIdleTime: 1000000,
   },
+  // disable logging; default: console.log
+  logging: false,
 };

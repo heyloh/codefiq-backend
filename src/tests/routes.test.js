@@ -1,9 +1,8 @@
 const request = require('supertest');
-const app = require('../server');
+const app = require('../app');
 const connection = require('../database/index');
 
 describe('Courses', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -14,26 +13,21 @@ describe('Courses', () => {
   });
 
   test('should create a new course', async () => {
-    const response = await request(app)
-      .post('/courses')
-      .type('json')
-      .send({
-        name: 'Testando1'
-      });
+    const response = await request(app).post('/courses').type('json').send({
+      name: 'Testando1',
+    });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-  
-  test('should show all courses', async () => {
-    const response = await request(app)
-      .get('/courses');
 
-      expect(response.statusCode).toEqual(200);
+  test('should show all courses', async () => {
+    const response = await request(app).get('/courses');
+
+    expect(response.statusCode).toEqual(200);
   });
 });
 
 describe('Users', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -44,44 +38,36 @@ describe('Users', () => {
   });
 
   test('should create a new user', async () => {
-    const response = await request(app)
-      .post('/users')
-      .type('json')
-      .send({
-        username: 'user',
-        email: 'user@email.com',
-        password: 'user1234'
-      });
+    const response = await request(app).post('/users').type('json').send({
+      username: 'user',
+      email: 'user@email.com',
+      password: 'user1234',
+    });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-  
+
   test('should show all users', async () => {
-    const response = await request(app)
-      .get('/users');
+    const response = await request(app).get('/users');
 
-      expect(response.statusCode).toEqual(200);
+    expect(response.statusCode).toEqual(200);
   });
 
-  test('should generate a valid token', async() => {
-    const { body } = await request(app)
-      .get('/sign-in')
-      .type('json')
-      .send({
-        email: 'user@email.com',
-        password: 'user1234'
-      });
+  test('should generate a valid token', async () => {
+    const { body } = await request(app).get('/sign-in').type('json').send({
+      email: 'user@email.com',
+      password: 'user1234',
+    });
 
     const response = await request(app)
       .get('/test')
-      .set('authorization', body.token)
+      .set('authorization', body.token);
 
-      expect(response.statusCode).toEqual(200);
-  })
+    expect(response.statusCode).toEqual(200);
+  });
 });
 
 describe('Subjects', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -92,27 +78,22 @@ describe('Subjects', () => {
   });
 
   test('should create a new subject', async () => {
-    const response = await request(app)
-      .post('/subjects')
-      .type('json')
-      .send({
-        name: 'Subject',
-        course_id: 1
-      });
+    const response = await request(app).post('/subjects').type('json').send({
+      name: 'Subject',
+      course_id: 1,
+    });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-  
-  test('should show all subjects', async () => {
-    const response = await request(app)
-      .get('/subjects');
 
-      expect(response.statusCode).toEqual(200);
+  test('should show all subjects', async () => {
+    const response = await request(app).get('/subjects');
+
+    expect(response.statusCode).toEqual(200);
   });
 });
 
 describe('Videos', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -123,27 +104,22 @@ describe('Videos', () => {
   });
 
   test('should create a new video', async () => {
-    const response = await request(app)
-      .post('/videos')
-      .type('json')
-      .send({
-        subject_id: 1,
-        url: "12345678912"
-      });
+    const response = await request(app).post('/videos').type('json').send({
+      subject_id: 1,
+      url: '12345678912',
+    });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-  
-  test('should show all videos', async () => {
-    const response = await request(app)
-      .get('/videos');
 
-      expect(response.statusCode).toEqual(200);
+  test('should show all videos', async () => {
+    const response = await request(app).get('/videos');
+
+    expect(response.statusCode).toEqual(200);
   });
 });
 
 describe('Exercises', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -160,29 +136,27 @@ describe('Exercises', () => {
       .send({
         subject_id: 1,
         content: {
-          question: "Quem escreve o algoritmo?",
+          question: 'Quem escreve o algoritmo?',
           answers: [
-            ["O programador", true],
-            "O usuário comum",
-            "A própria máquina, usando de base o código",
-            "O algoritmo não é escrito",
-          ]
-        }
+            ['O programador', true],
+            'O usuário comum',
+            'A própria máquina, usando de base o código',
+            'O algoritmo não é escrito',
+          ],
+        },
       });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-  
-  test('should show all exercises', async () => {
-    const response = await request(app)
-      .get('/exercises');
 
-      expect(response.statusCode).toEqual(200);
+  test('should show all exercises', async () => {
+    const response = await request(app).get('/exercises');
+
+    expect(response.statusCode).toEqual(200);
   });
 });
 
 describe('Progress', () => {
-
   beforeEach(async () => {
     await connection.sync();
   });
@@ -196,30 +170,29 @@ describe('Progress', () => {
     const response = await request(app)
       .post('/progress')
       .send({
-        progress: {"example": "example"},
+        progress: { example: 'example' },
         user_id: 2,
-        course_id: 9,   
+        course_id: 9,
       });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
 
   test('should show all progress', async () => {
-    const response = await request(app)
-      .get('/progress');
+    const response = await request(app).get('/progress');
 
-      expect(response.statusCode).toEqual(200);
+    expect(response.statusCode).toEqual(200);
   });
 
   test('should update a progress', async () => {
     const response = await request(app)
       .post('/progress')
       .send({
-        progress: {"update": "example"},
+        progress: { update: 'example' },
         user_id: 2,
-        course_id: 9,   
+        course_id: 9,
       });
 
-      expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(201);
   });
-}); 
+});
