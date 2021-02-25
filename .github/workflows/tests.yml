@@ -25,21 +25,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        
     - name: Install dependencies
     - run: npm install
-    
     - name: Run docker container
     - run: docker-compose up -d
-    
     - name: Execute migrations
     - run: npx sequelize-cli db:migrate
-    
     - name: Run tests server
     - run: npm test
-    
     - name: Run development server
     - run: npm start
-    
       env: 
         CI: true
