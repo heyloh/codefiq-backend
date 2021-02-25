@@ -15,8 +15,8 @@ module.exports = {
     underscoredAll: true,
   },
   pool: {
-    max: 25,
-    min: 0,
-    idle: 10000,
+    maxConnections: 25,
+    minConnections: 0,
+    maxIdleTime: 1000000,
   },
 };
