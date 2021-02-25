@@ -4,7 +4,7 @@ require('dotenv').config();
 module.exports = {
   dialect: 'postgres' /* Selected database */,
   host: process.env.DATABASE_HOST || 'localhost',
-  port: process.env.DATABASE_PORT || '5433' /* Database port */,
+  port: process.env.DATABASE_PORT || '5432' /* Database port */,
   username: process.env.DATABASE_USERNAME || 'postgres' /* Your Image name */,
   password:
     process.env.DATABASE_PWD || 'postgres' /* Your container password */,
