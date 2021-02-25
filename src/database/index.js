@@ -10,11 +10,7 @@ const Exercise = require('../models/Exercise');
 const Progress = require('../models/Progress');
 
 /* Setting up the connection */
-const connection = createDbConfig();
-
-async function createDbConfig() {
-  return await new Sequelize(dbConfig);
-}
+const connection = new Sequelize(dbConfig);
 
 /* Telling model to use the connection above */
 User.init(connection);
