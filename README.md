@@ -2,11 +2,7 @@
   <img alt="Codefiq" title="#Codefiq" src="./github-assets/banner.png" />
 </h1>
 
-<p align="center">🌐 Backend do projeto 🍃</p>
-
-<h4 align="center"> 
-	🚧  Em construção...  🚧
-</h4>
+<p align="center">🌐 REST API do Codefiq</p>
 
 <p align="center">
  <a href="#-objetivo">Objetivo</a> •
@@ -26,74 +22,34 @@ Neste repositório encontra-se todo o Backend do projeto [Codefiq](https://githu
 
 ## 💻 Executando o Codefiq
 
-### Pré-requisitos
-
-É necessário ter instalado na sua máquina para execução desse projeto:
-- NodeJS
-- Gerenciador de pacotes (Npm ou Yarn)
-
-> Em breve mais detalhes...
-
-### ♊ Clonando o Repositório
-
-```bash
-
-$ git clone https://github.com/heyloh/codefiq-backend.git
-
-# entre na pasta do projeto
-$ cd codefiq-backend
-
-```
-
-### 🌐 Rodando o Servidor
-
-```bash
-
-	🚧  Em construção...  🚧
-
-```
-### 📱 Rodando o app Codefiq
-
 Acesse o repositório do App para mais informações: [Codefiq](https://github.com/heyloh/codefiq/)
 
 ---
 
 ## 🛠 Tecnologias
 
-As seguintes ferramentas foram usadas na construção do projeto backend:
 - <a href="https://nodejs.org/en/">NodeJS</a>
-- ...
-- ...
-> Mais informações no arquivo package.json
+- <a href="https://expressjs.com/">Express</a>
+- <a href="https://nodemon.io/">Nodemon</a>
+- <a href="https://www.docker.com/">Docker</a> 🐋
+- <a href="https://sequelize.org/">Sequelize</a>
+- <a href="https://www.postgresql.org/">PostgreSQL</a> 🐘
+- <a href="https://jestjs.io/">Jest</a>
+- <a href="">JWT</a>
+
+> Mais informações no arquivo `package.json`
 
 ---
 
 ## 👨‍💻 Desenvolvedores
 
 ### Arlene Pelenda([@Julenne](https://github.com/Julenne))
-⚙️ Contribuições:
- - Idealização
- - Desenvolvimento do Backend da aplicação
- - ...
 
 ### Lohana Torres([@heyloh](https://github.com/heyloh))
-⚙️ Contribuições:
- - Idealização
- - Design de UI
- - Desenvolvimento da aplicação [Mobile](https://github.com/heyloh/codefiq/)
 
 ### Gean de Magalhães([@GE28](https://github.com/GE28))
-⚙️ Contribuições:
- - Idealização
- - Produção de conteúdo didático
- - ...
- 
- ### Mariana da Conceição([@MariTdc](https://github.com/MariTdc))
- ⚙️ Contribuições:
- - Produção de documentação
- - Produção de Diagramas
- - Pesquisa e Review
- - ...
+
+### Mariana da Conceição([@MariTdc](https://github.com/MariTdc))
 
 ---
 
