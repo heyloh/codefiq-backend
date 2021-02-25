@@ -213,7 +213,7 @@ describe('Progress', () => {
 
   test('should update a progress', async () => {
     const response = await request(app)
-      .post('/progress')
+      .update('/progress')
       .send({
         progress: {"update": "example"},
         user_id: 2,
