@@ -11,6 +11,7 @@ const Progress = require('../models/Progress');
 
 /* Setting up the connection */
 const connection = new Sequelize(dbConfig);
+connection.timeout = 0;
 
 /* Telling model to use the connection above */
 User.init(connection);
