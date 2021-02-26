@@ -54,7 +54,7 @@ describe('Users', () => {
   });
 
   test('should generate a valid token', async () => {
-    const { body } = await request(app).get('/sign-in').type('json').send({
+    const { body } = await request(app).post('/sign-in').type('json').send({
       email: 'user@email.com',
       password: 'user1234',
     });
