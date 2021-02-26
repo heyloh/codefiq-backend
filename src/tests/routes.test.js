@@ -184,7 +184,7 @@ describe('Progress', () => {
     expect(response.statusCode).toEqual(200);
   });
 
-  test('should update a progress', async () => {
+  test('should update a progress', async (done) => {
     const response = await request(app)
       .put('/progress')
       .send({
@@ -194,5 +194,6 @@ describe('Progress', () => {
       });
 
     expect(response.statusCode).toEqual(201);
+    done();
   });
 });
