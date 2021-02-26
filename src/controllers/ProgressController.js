@@ -37,19 +37,8 @@ module.exports = {
       up.progress = progress;
       const result = await up.save();
       return response.status(201).json(result);
-      
-      /*
-      const prog_result = await Progress.update(
-                    {progress: progress}, 
-                    {where: {user_id: user_id, course_id: course_id}})
-                    .then (function ([rowsUpdate, [updatedBook]]) { 
-                      //res.json (updatedBook) 
-                      return response.status(201).json(updatedBook);
-                   });
-                */   
       /* Returning successfully */
       
-
     } catch (e){
       /* Testing for errors in progress creation  */
       const err = new Error(e);
