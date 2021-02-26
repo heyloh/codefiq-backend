@@ -171,8 +171,8 @@ describe('Progress', () => {
       .post('/progress')
       .send({
         progress: { example: 'example' },
-        user_id: 2,
-        course_id: 9,
+        user_id: 1,
+        course_id: 1,
       });
 
     expect(response.statusCode).toEqual(201);
@@ -189,8 +189,8 @@ describe('Progress', () => {
       .put('/progress')
       .send({
         progress: { update: 'example' },
-        user_id: 2,
-        course_id: 9,
+        user_id: 1,
+        course_id: 1,
       });
 
     expect(response.statusCode).toEqual(201);

@@ -32,7 +32,8 @@ module.exports = {
     /* Inserting the new progress on the database */
     try {
       
-      const up = await Progress.findOne({user_id: user_id, course_id: course_id})
+      const up = await Progress
+                    .findOne({where: {user_id: user_id, course_id: course_id}})
       up.progress = progress;
       const result = await up.save();
       return response.status(201).json(result);
@@ -45,7 +46,7 @@ module.exports = {
                       //res.json (updatedBook) 
                       return response.status(201).json(updatedBook);
                    });
-                   */
+                */   
       /* Returning successfully */
       
 
