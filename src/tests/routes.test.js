@@ -154,6 +154,12 @@ describe('Exercises', () => {
 
     expect(response.statusCode).toEqual(200);
   });
+
+  test('should shuffle exercises', async () => {
+    const response = await request(app).get('/exercises/1');
+    expect(response.statusCode).toEqual(200);
+  });
+
 });
 
 describe('Progress', () => {
