@@ -24,6 +24,17 @@ module.exports = {
     return response.json(exercises);
   },
 
+  async shuffle(request, response) {
+    const {subject_id} = request.params;
+    const array = await Exercise.findAll({where: {subject_id: subject_id}})
+    
+    array.sort(() => {
+      return .5 - Math.random()
+    });
+    
+    return response.json(array);
+  },
+
   /* The following method is used for creating a new exercise */
   async store(request, response, next) {
     const { content, subject_id } = request.body;
