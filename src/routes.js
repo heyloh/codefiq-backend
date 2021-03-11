@@ -48,6 +48,8 @@ routes.post('/videos', VideoController.store);
 routes.get('/exercises', ExerciseController.index);
 /* Route for creating a new exercise */
 routes.post('/exercises', ExerciseController.store);
+/* Route for shuffle exercises */
+routes.get('/exercises/:subject_id', ExerciseController.shuffle);
 
 /* Route for listing progress */
 routes.get('/progress', ProgressController.index);
