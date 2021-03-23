@@ -3,7 +3,10 @@ require('dotenv').config();
 
 module.exports = {
   dialect: 'postgres' /* Selected database */,
-  ssl:true,
+  ssl:{
+    require:true,
+    rejectUnauthorized: false,
+  },
   host: process.env.DATABASE_HOST || 'localhost',
   port: process.env.DATABASE_PORT || '5433' /* Database port */,
   username: process.env.DATABASE_USERNAME || 'postgres' /* Your Image name */,
