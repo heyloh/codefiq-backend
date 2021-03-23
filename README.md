@@ -41,18 +41,6 @@ Acesse o repositório do App para mais informações: [Codefiq](https://github.c
 
 ---
 
-## 👨‍💻 Desenvolvedores
-
-- Arlene Pelenda([@Julenne](https://github.com/Julenne))
-
-- Lohana Torres([@heyloh](https://github.com/heyloh))
-
-- Gean de Magalhães([@GE28](https://github.com/GE28))
-
-- Mariana da Conceição([@MariTdc](https://github.com/MariTdc))
-
----
-
 ## 📝 Licença
 
 Este projeto esta sobe a licença [Apache 2.0](./LICENSE).
