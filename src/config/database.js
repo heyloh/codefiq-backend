@@ -3,6 +3,12 @@ require('dotenv').config();
 
 module.exports = {
   dialect: 'postgres' /* Selected database */,
+  dialectOptions: {
+    ssl: {
+      require: true, // This will help you. But you will see nwe error
+      //rejectUnauthorized: false // This line will fix new error
+    }
+  },
   host: process.env.DATABASE_HOST || 'localhost',
   port: process.env.DATABASE_PORT || '5433' /* Database port */,
   username: process.env.DATABASE_USERNAME || 'postgres' /* Your Image name */,
